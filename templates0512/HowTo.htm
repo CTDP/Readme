@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CTDP - Readme - Templates for F1 2005</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+<!--
+body {background:white url(CTDPReadme/bg_whiteflag_mirrored.jpg) no-repeat;background-position:bottom right;
+background-attachment:fixed;margin:0;padding:0;}
+
+p, td, tr, b, i, u, h1, h2, ul, li, a { font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;}
+a {font-weight:bold;}
+h1 {    font-size: 13pt; }
+
+h2 {    font-size: 10pt;}
+
+.small {    font-size: 9pt;}
+
+img {border:0;}
+img.preview {width:150px; height:100px; margin:10px;border:1px solid #eeeeee; display:block;}
+
+/* Boxes */
+
+/* Note the procentual widths don't fit 100% as there are the few px borders to count into as well */
+
+#Logo {float:left;width:17%;margin:2%;padding:1%;}
+
+#Pictures {float:left;width:17%;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC;margin:2%;padding:1%;}
+
+#Disclaimer, #Feedback {float:right;width:17%;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC;margin:2%;padding:1%;}
+
+#Titel, #Description,#Facts 
+{width:67%;float:right;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC; margin:2%;padding:1%;}
+
+ #Credits, #History, #Installation, #Uninstall, #Misc 
+{width:67%;float:left;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC; margin:2%;padding:1%;}
+
+-->
+</style>
+</head>
+
+<body>
+
+
+<div>
+
+<div id="Logo">
+  <a href="http://ctdp.racingmag.de" title="CTDP-Website">
+  <img src="CTDPReadme/ctdp-without-text.png" alt="CTDP" /></a>
+</div>
+
+
+
+<div id="Titel">
+        <h1>CTDP Templates for F1-2005</h1>
+        <p>&copy; 2006 <a href="http://ctdp.racingmag.de" title="CTDP Website">CTDP</a> - Version 1.2 - Date: 12 July 2006</p>
+</div>
+
+<div id ="Pictures" style="text-align:center;">
+
+<!-- Pictures of format 150x100 px 
+EDIT the filenames, but keep the files in the same folder -->
+
+<img class="preview" style="text-align:center;" src="CTDPReadme/preview100px1.jpg" alt="Preview 1" />
+<img class="preview" src="CTDPReadme/preview100px2.jpg" alt="Preview 2" />
+<img class="preview" src="CTDPReadme/preview100px3.jpg" alt="Preview 3" />
+<img class="preview" src="CTDPReadme/preview100px4.jpg" alt="Preview 4" />
+<img class="preview" src="CTDPReadme/preview100px5.jpg" alt="Preview 5" />
+
+
+</div>
+
+<div id="Description"> 
+<h2>Getting the car ingame ...</h2>
+<p>So, how do you actually get your car ingame? This question shall be answered in the next few paragraphs.</p>
+<p>By now you should have your car ready and saved as dds-files for rFactor or bmp for F1C.</p>
+</div>
+
+
+<div id="Description"> 
+<h2>in F1C</h2>
+<p>To install the cars, just save the texture as bmp and replace the files in the directory: </p>
+
+<p>\CTDPSeasonData\Vehicles\&lt;Team&gt;\2005CTDP_&lt;CAR&gt;(ex: \CTDPSeasonData\Vehicles\McLaren\2005CTDP_MP4-20) or \CTDPSeasonData\Circuits\&lt;COUNTRY&gt;\2005CTDP_&lt;CIRCUIT&gt; (ex: \CTDPSeasonData\Circuits\Australia\2005CTDP_Albert_Park) for trackversions.</p>
+<p>For Helmets just make your own helmet according to the Layout and place the bmps into: \CTDPSeasonData\Vehicles\</p>
+
+<p>Jpeg Compression for Helmets is very high so quality is bad, but you now know how to paint the helmets. The reason behind the bad quality is to avoiding Rip Offs.<br />
+But don't worry. All designs are clean on the textures, you can just paint on the texture and don't worry, there are no shadings or details you need to do. They are automatically inserted through the game model.
+<br />
+These helmet-textures also work in rFactor.
+</p>
+<p>You'll find the folder "emaps" included in this templates. There you find a more detailed writeup on emaps and how strong an effect they have in F1C.</p>
+</div>
+
+
+<div id="Description"> 
+<h2>in rFactor</h2>
+<p>Now for rFactor I'd like to explain the way it works in a little bit more detail. This requires you to take a look on how rFactor originally manages things and how we 
+handle textures.</p>
+</div>
+	
+
+
+</div> <!-- first Part -->
+	
+<div style="clear:both;">
+        
+<div id="History">
+<h2>rFactor's way ....</h2>
+
+<p>rFactor's way of skinning a car is simple. You have one texture per veh-file. (Those set up on each car/driver ingame.) Every driver has his very own car texture and is 
+completely independent from any other texture.</p>
+<img src="CTDPReadme/rf-way.png" alt="rFactor's way" />
+
+</div>
+
+<div id="History">
+<h2>CTDP's way...</h2>
+
+<p>CTDP used a different way of mapping for years. It's a development of GP4's way to map on 3 textures. We improved this by mapping all side parts on textures 1 and 2, 
+which are identical in mapping, but only have horizonally flipped logos. So 1 is for the right side of the car, 2 is left.<br />
+Texture 3 is the top side or shared material. Usually all cars apply to this standard, so far only Williams uses a fourth texture.</p>
+<p>This may sound as a disadvantage at first, as we use 3 times the texture size of a single ISI-FIS-car. The thing is, that both our drivers share the same 3 textures.
+So not every driver has uniqe textures anymore, but instead driver 2 has the same textures, just slightly remapped. I think the following chart should explain quite well.</p>
+<img src="CTDPReadme/ctdp-way.png" alt="CTDP's way" />
+<p>This way of texturing wasn't supported by ISI at the beginning. You could use it, but the Skinning-feature to select own skins in the menu didn't work. Thanks to ISI for 
+adding this, although it was not easy to implement, we are glad we can use this, since it will make your day way easier.</p>
+<p>Of course every rule has it's exceptions. A case where this occurs is McLaren which has 3 textures per driver.</p>
+</div>
+
+
+
+
+<div id="Disclaimer">
+<h2>Disclaimer</h2>
+
+<p>It's not allowed to copy anything from this package without an explicit permission from CTDP.</p> 
+<p>You use this MOD on your own risk! We're not responsible in case of problems.</p> 
+<p>You do not have permission to put this package on any cover-cds without our explicit permission!</p> 
+<p>This modification may not be distributed for any commercial purposes!</p> 
+
+<p>You may freely use this template to paint own cars. They may only be used in the CTDP 2005 mod. 
+The textures may be distributed freely without explicit permission from CTDP. </p>
+
+<p>Webmasters can upload this template, but to keep the overview we want to get informed about mirrors.</p>
+
+</div>
+
+
+<div id="Installation">
+<h2>Getting it ingame </h2>
+
+<p>One of the best features in my opinion as a painter is the menu-skinning feature, where you can install new skins for a car and simply choose them from within the menu.
+This is the way how you can use it for CTDP05, however it may vary from other mods.</p>
+<p>Short excursion on materials. Every car has a DefaultLivery set up in the veh-file and it can also have several Extra-Materials assigned for the livery.
+Now we have this DefaultLivery and 2 Extra set up. <br />
+Skins in rF are generally put into a folder &quot;-name of the veh-file-SKINS&quot;. We already included those. 
+</p>
+<p>So if you want to install your skin, first rename your textures. You first give the DefaultLivery(Usually the leftside, so either _1 or _right)
+any name &quot;newName.dds&quot;<br />
+The left-side and top (_2, _3 or _left, _top) are now called &quot;newNameEXTRA0.dds&quot; and &quot;newNameEXTRA1.dds&quot;
+just put the newName.dds in this SKINS-folder and the newNameEXTRA-files in the Misc-folder within the Skins-Folder.
+Prepare a nice little newName.txt-file in the Skin-folder like the ones we included and you are all set.</p>
+<p>To share your skin, prepare an archive which has the newName.dds and the newName.txt in it's root and has a subfolder Misc, with the Extra-Textures.<br />
+For installing all you do is simply extract in the skins-folder of the second person and he is all set as well.</p>
+<p>Have fun with your skins!</p>
+
+</div>
+	
+	
+
+
+	
+
+
+
+
+
+<div id="Feedback">
+<h2>Feedback</h2>
+<ul style="margin:0;padding:10px;">
+            <li>Mail Address:<br />
+            <a href="mailto:ctdp@racingmag.de" title="Mail">ctdp@racingmag.de</a></li>
+            <li>Websites:<br />
+            <a href="http://ctdp.racingmag.de" title="Website">ctdp.racingmag.de</a></li>
+            <li>
+            <a href="http://racingmag.gamesurf.tiscali.de/ctdp/index.php?type=contact" title="Contact Form">Contact Form</a></li>
+          </ul>
+</div>
+
+</div>
+  
+
+</body>
+</html>

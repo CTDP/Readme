@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CTDP - Readme - Templates for F1 2005</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+<!--
+body {background:white url(CTDPReadme/bg_whiteflag_mirrored.jpg) no-repeat;background-position:bottom right;
+background-attachment:fixed;margin:0;padding:0;}
+
+p, td, tr, b, i, u, h1, h2, ul, li, a { font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;}
+a {font-weight:bold;}
+h1 {    font-size: 13pt; }
+
+h2 {    font-size: 10pt;}
+
+.small {    font-size: 9pt;}
+
+img {border:0;}
+img.preview {width:150px; height:100px; margin:10px;border:1px solid #eeeeee; display:block;}
+
+/* Boxes */
+
+/* Note the procentual widths don't fit 100% as there are the few px borders to count into as well */
+
+#Logo {float:left;width:17%;margin:2%;padding:1%;}
+
+#Pictures {float:left;width:17%;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC;margin:2%;padding:1%;}
+
+#Disclaimer, #Feedback {float:right;width:17%;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC;margin:2%;padding:1%;}
+
+#Titel, #Description,#Facts 
+{width:67%;float:right;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC; margin:2%;padding:1%;}
+
+ #Credits, #History, #Installation, #Uninstall, #Misc 
+{width:67%;float:left;background:url(CTDPReadme/bg_grey.png); border: 1px solid #CCCCCC; margin:2%;padding:1%;}
+
+-->
+</style>
+</head>
+
+<body>
+
+
+<div>
+
+<div id="Logo">
+  <a href="http://ctdp.racingmag.de" title="CTDP-Website">
+  <img src="CTDPReadme/ctdp-without-text.png" alt="CTDP" /></a>
+</div>
+
+
+
+<div id="Titel">
+        <h1>CTDP Templates for F1-2005</h1>
+        <p>&copy; 2006 <a href="http://ctdp.racingmag.de" title="CTDP Website">CTDP</a> - Version 1.2 - Date: 12 July 2006</p>
+</div>
+
+<div id ="Pictures" style="text-align:center;">
+
+<!-- Pictures of format 150x100 px 
+EDIT the filenames, but keep the files in the same folder -->
+
+<img class="preview" style="text-align:center;" src="CTDPReadme/preview100px1.jpg" alt="Preview 1" />
+<img class="preview" src="CTDPReadme/preview100px2.jpg" alt="Preview 2" />
+<img class="preview" src="CTDPReadme/preview100px3.jpg" alt="Preview 3" />
+<img class="preview" src="CTDPReadme/preview100px4.jpg" alt="Preview 4" />
+<img class="preview" src="CTDPReadme/preview100px5.jpg" alt="Preview 5" />
+
+
+</div>
+
+<div id="Description"> 
+<h2>Maps</h2>
+<p>As a painter you should only need to know about the Diffuse, Reflection and Spec-Map. Howewer I will describe them all.</p>
+<img src="CTDPReadme/maps.png" alt="Shader" />
+</div>
+
+
+<div id="Description"> 
+<h2>Diffuse Map</h2>
+<p>This is the most important texture, namely the regular one This is the usual texture you paint. Leave all layers on for saving. 
+(of course apart from the guides and wireframe and layers for spec- and alpha-layer)</p>
+<p>This has to be saved as Teamname_x.dds - DDS DXT5 with interpolated alpha.</p>
+</div>
+
+
+<div id="Description"> 
+<h2>Reflection Map</h2>
+<p>Read below about the Spec-map. They are nearly the same, ISI even uses the very same textures. They might only differ in brightness.</p>
+<p>This is a 8bit greyscale map which is in the alpha-channel of the cartexture. Their brightness defines how strong the car shows the cubemap reflection at a given point on the car.</p>
+</div>
+	
+
+
+</div> <!-- first Part -->
+	
+<div style="clear:both;">
+        
+<div id="History">
+<h2>Specular Map (grey)</h2>
+
+<p>The Specular Map (short spec) is the team_XS.dds. This one basically defines how bright your car is under sunlight.
+The alpha is plain white.<br />
+To make a long story short, you CAN copy the alpha-channel if done properly, but you will at least have to tweak brightness and contrast.</p>
+
+<p>For both channels, the very best method is to take the car-sources and create a folder including 2 Settinglayers.
+One, that sort of inverts the color and second a layer to desaturate the colors, leaving a greyscale picture.<br />
+This Alpha-folder (as I call it) must be above the design/ads/carbon-layers, but beneath all shadings and details(bolts, lines). In this templates I already prepared this one.
+Usually I disable ads, so I don't have to make a new spec everytime a logo changes on the actual texture. If the main design changes 
+frequently you can even disable the design and just keep a plain grey background.</p>
+
+<p>When this is done, I usually darken the maps by 50-70%. For this purpose I added a alpha-strength-layer in the templates, which darkens by this amount. <br />
+Note this value should be the same on all 3 textures.</p>
+
+<p>Some words on why I invert the design. Thing is, black is more reflective, therefore has a lighter spec, as sun also reflects stronger. other materials 
+like white ones seem less reflective and so they don't have such an high spec, to give more contrast.<br />
+But, you can not simply invert the original textures, as this would also light up shaded areas, which would now be unrealistic 
+reflective and with utterly bright spec. It would look strange ingame and you'd loose contrast on the car.<br />
+That's why you have to invert the design beneath the shadows.</p>
+
+<p>As I did the Spec-maps and I had to come up with a new way to get everything in the best possible result, it's lots of 
+trial and error and in the end it's a matter of how good you want the result to look, while not having to do too much work and being as flexible as possible.</p>
+<p>Save this as Teamname_xS.dds - DDS DXT1 with 1bit white alpha. The texture can be scaled down to half the size of the original, ie 512²</p>
+</div>
+
+
+
+<div id="Disclaimer">
+<h2>Disclaimer</h2>
+
+<p>It's not allowed to copy anything from this package without an explicit permission from CTDP.</p> 
+<p>You use this MOD on your own risk! We're not responsible in case of problems.</p> 
+<p>You do not have permission to put this package on any cover-cds without our explicit permission!</p> 
+<p>This modification may not be distributed for any commercial purposes!</p> 
+
+<p>You may freely use this template to paint own cars. They may only be used in the CTDP 2005 mod. 
+The textures may be distributed freely without explicit permission from CTDP. </p>
+
+<p>Webmasters can upload this template, but to keep the overview we want to get informed about mirrors.</p>
+
+</div>
+
+
+<div id="History">
+<h2>Specular Map (colored)</h2>
+
+<p>You can also use colored specular maps. This will result in some slight coloration of the car when under lighting. This may be used for some cool effects, however on the 
+original F1-2005 cars, we use grey maps only.</p>
+</div>
+
+
+<div id="Installation">
+<h2>Bump Maps</h2>
+
+<p>Some words on making bump maps. Usually you don't have to replace bump-map textures, but ingame you want to try something fancy, this may get you some cool results.</p>
+
+<p>On the bumpmaps you should only have:</p>
+<ul><li>jointlines</li>
+<li>bolts</li>
+<li>holes</li>
+<li>deeps/darks</li>
+<li>tape</li></ul>
+
+<p>No carbon for example (carbon has a smooth surface)</p>
+
+<p>You take the nvidia plugin for normalmaps and get a full-purple map. (my settings are mostly RGB-based on 1:1 height)
+The rendered maps are too strong. Many testers mentioned heavy lines on the car that ignore antialiasing. This is due to a too strong bumpmap.</p>
+
+<p>What I do on the 2005 cars is turn the bumpmap down by 50%. <br />
+You can do this yourself if necessary by adding a new layer of the same purple color and just change the opacity to 50%. Merge them, Ready freddy.</p>
+
+<p>Ingame it won't create this heavy lines anymore and the bumpmaps in general will fit much nicer to the car.</p>
+<p>Save this as Teamname_xB.dds - DDS as DXT1 with 1bit white alpha</p>
+</div>
+	
+	
+
+
+	
+
+
+
+
+
+<div id="Feedback">
+<h2>Feedback</h2>
+<ul style="margin:0;padding:10px;">
+            <li>Mail Address:<br />
+            <a href="mailto:ctdp@racingmag.de" title="Mail">ctdp@racingmag.de</a></li>
+            <li>Websites:<br />
+            <a href="http://ctdp.racingmag.de" title="Website">ctdp.racingmag.de</a></li>
+            <li>
+            <a href="http://racingmag.gamesurf.tiscali.de/ctdp/index.php?type=contact" title="Contact Form">Contact Form</a></li>
+          </ul>
+</div>
+
+</div>
+  
+
+</body>
+</html>

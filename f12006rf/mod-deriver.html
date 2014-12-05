@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    
+    <title>CTDPF106 Mod Deriver ReadMe</title>
+    
+    <style type="text/css">
+        p, li
+        {
+            font-family: Arial;
+            font-size: 12pt;
+        }
+    </style>
+    
+</head>
+
+<body style="margin: 5px;">
+
+<h1>CTDPF106 Mod Deriver</h1>
+
+<p>
+The Mod Deriver serves as a replacement for the league physics pack. You can freely define,
+what physics your vehicles use and can even customize them. It it also possible to give some
+cars the physics of the Renault and some of the Ferrari or something.<br />
+Customize and derive your own league mod to get the best competition for all participants.<br />
+<u>Track upgrades will still work in your derived mod.</u>
+</p>
+
+<p>
+<h2>Parameters</h2>
+<p>
+<strong>Mod Name</strong><br />
+The name, that will be displayed in the game.
+</p>
+<p>
+<strong>RFM Name</strong><br />
+Filename for the RFM
+</p>
+<p>
+<strong>Vehicle Folder Name</strong><br />
+Folder name, where to place the derived vehicles. This folder will be created under GameData\Vehicles\CTDP\CTDP.
+</p>
+<p>
+<strong>Vehicle Filter Class</strong><br />
+The vehicle class for the derived vehicles. This must be unique and must differ from &quot;CTDPF1_2006&quot;
+</p>
+<p>
+<strong>Allow All Tire Compounds</strong><br />
+If this is set, all 2*10 compounds are available in setups instead of only the ones for regular track upgrades.
+</p>
+<p>
+<strong>Parc Ferme Setups</strong><br />
+If this is set, only small parts of the setup are modifiable between qualifying and race (like fuel, which is not).
+</p>
+<p>
+<strong>Parc Ferme Tires</strong><br />
+The given amount of drivers will start with used tires into the race.
+</p>
+<p>
+<strong>Max Opponents</strong><br />
+The maximum number of allowed opponents.
+</p>
+</p>
+
+<p>
+<h2>Custom Engines</h2>
+<p>
+Here you can define custom engines, that you can assign to custom physics.
+</p>
+<p>
+<strong>Name</strong><br />
+The name for the new custom engine. It must be unique and differ from the original names.
+</p>
+<p>
+<strong>Base</strong><br />
+The original engine to base off.
+</p>
+<p>
+<strong>Launch Efficiency</strong><br />
+Efficiency (0.0-1.0) of launch control, or 0.0 if N/A. -1.0 will use the original value from the base engine.
+</p>
+<p>
+<strong>Lifetime RPM Base</strong><br />
+First value of the LifetimeEngineRPM setting. Base engine speed for lifetime. -1.0 will use the original value from the base engine.
+</p>
+<p>
+<strong>Lifetime RPM Half</strong><br />
+Second value of the LifetimeEngineRPM setting. Range where lifetime is halved. -1.0 will use the original value from the base engine.
+</p>
+<p>
+<strong>Lifetime Average</strong><br />
+Average lifetime in seconds. -1 will use the original value from the base engine.
+</p>
+<p>
+<strong>Lifetime Variance</strong><br />
+Lifetime random variance. -1 will use the original value from the base engine.
+</p>
+<p>
+<strong>Central</strong><br />
+If checked, the engine ini file will be placed in the vehicles folder instead of the specific folder for the using vehicle.
+This clarifies, that the engine is the same for all using vehicles.
+</p>
+</p>
+
+<p>
+<h2>Custom Vehicle Physics</h2>
+<p>
+Here you can define custom vehicle physics, that you can assign to derived vehicles.
+</p>
+<p>
+<strong>Name</strong><br />
+The name for the new custom engine. It must be unique and differ from the original names.
+</p>
+<p>
+<strong>Base</strong><br />
+The original vehicle to base physics off.
+</p>
+<p>
+<strong>Tire Brand</strong><br />
+The tire brand to use for these vehicle physics.
+</p>
+<p>
+<strong>Fuel Tank Size</strong><br />
+The size in liters of the vehicle's fuel tank. -1 will use the original value from the base vehicle.
+</p>
+<p>
+<strong>Draft Factor</strong><br />
+This is a manipulation factor for draft (dirty air) effects. The following settings are affected.
+<ul>
+    <li>FRONTWING / FWDraftLiftMult</li>
+    <li>REARWING / RWDraftLiftMult</li>
+    <li>LEFTFENDER / FenderDraftLiftMult</li>
+    <li>RIGHTFENDER / FenderDraftLiftMult</li>
+    <li>BODYAERO / BodyDraftLiftMult</li>
+    <li>DIFFUSER / DiffuserDraftLiftMult</li>
+</ul>
+Each original value is manipulated using the following math.<br />
+v is the original value for one setting.<br />
+f is the draft factor.<br />
+v' is the resulting value.<br />
+v' = ( ( v - 1.0 ) * f ) + 1.0<br />
+This means, a value of 1.0 leaves all original values unchanged. 0.0 sets all new values to 1.0, which means no draft effect.
+Values smaller than zero will make the value go below 1.0.
+</p>
+<p>
+<strong>Engine</strong><br />
+The engine to use for this vehicle type.
+</p>
+<p>
+<strong>Central</strong><br />
+If checked, the vehicle HDV file will be placed in the vehicles folder instead of the specific folder for the using vehicle.
+This clarifies, that the HDV is the same for all using vehicles. Central here also forces central for the used engine.
+</p>
+</p>
+
+<p>
+<h2>Vehicle Derivations</h2>
+<p>
+Here you can define derived vehicles, that will be drivable in the game using the derived mod.
+</p>
+<p>
+<strong>Name</strong><br />
+The new name for the derived vehicle.
+</p>
+<p>
+<strong>Physics</strong><br />
+The physics to use for the derived vehicle. This can be an original car or a custom one.
+</p>
+</p>
+
+<p>
+The simplest way to derive a league mod is to add all teams to the bottom list and give tham all the same original physics.
+There are predefined league derivation configurations shipped with this tool. Just load the xml files from this folder and
+use them.
+</p>
+
+<p>
+<h2>One click install</h2>
+There are two ways to derive a (pre-)defined derivation mod. One way is to hand the saved xml file to your league members
+and tell them to load the file with the Mod Deriver by doubleclicking the jar file and loading the file. Then they just have
+to click on &quot;Derive&quot; and wait a few minutes until the &quot;Ready.&quot; message appears in the log.<br />
+The other way is to create a batch file with the following content.
+<pre>
+@java -jar ctdp06_mod_deriver.jar --config-file YOUR_CONFIG_FILE.xml --gui-less
+@pause
+</pre>
+Then give this batch (.cmd) file to your drivers, tell them to put it into the mod_deriver folder and execute it.
+</p>
+
+<p>
+<h2>Deleting a derived mod</h2>
+If your derived mod has &quot;F1CTDP06_My_Derived_Mod&quot; as &quot;Vehicle Folder Name&quot; and &quot;RFM Name&quot;, you just have
+to go into the rfm folder of your rFactor installation and delete the four files<br />
+F1CTDP06_My_Derived_Mod.bik<br />
+F1CTDP06_My_Derived_Mod.rfm<br />
+F1CTDP06_My_Derived_Mod.tga<br />
+F1CTDP06_My_Derived_Mod_logo.tga<br />
+And then delete the folder &quot;GameData\Vehicles\CTDP\CTDP\F1CTDP06_My_Derived_Mod&quot; and all of its contents and you're through. 
+</p>
+
+<p>
+<strong>Have fun! :-)</strong><br />
+</p>
+
+</body>
+
+</html>
